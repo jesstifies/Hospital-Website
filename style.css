@@ -27,8 +27,12 @@ html{
     scroll-behavior: smooth;
 }
 
+section{
+    padding: 2rem 9%;
+}
+
 .header{
-    padding: 2 rem 9%;
+    padding: 2rem 9%;
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
@@ -41,9 +45,148 @@ html{
 
 .header .logo{
     font-size: 2.5rem;
-    color:var(--black)
+    color:var(--black);
 }
 
 .header .logo i{
-    color:var(--green)
+    color:var(--green);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color: var(--green);
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--green);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 10rem;
+}
+
+.home .image {
+   flex: 1 1 45rem;
+}
+
+.home .image img{
+    width: 100%;
+}
+
+.home .content{
+    flex: 1 1 45rem;
+}
+
+.home .content h3{
+   font-size: 4.5rem; 
+   color: var(--black) ;
+   line-height: 1.8;
+   text-shadow: var(--text-shadow);
+}
+
+.home .content p {
+    font-size: 1.7rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem 4%;
+    }
+    .header .navbar a {
+        margin-left: 1rem;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 768px){
+    #menu-btn{
+        display: initial;
+    }
+    .header{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 115%; right: 2rem;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        width: 25rem;
+        border: var(--border);
+        background: #fff;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top right;
+        transition: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .header .navbar.active{
+        transform: scale(1);
+        opacity: 1;
+        transition: all .2s ease-out;
+        align-items: center;
+        justify-content: center;
+    }
+    .header .navbar a{
+        display: block;
+        padding: 1.2rem 1.5rem;
+        margin: 1rem 0;
+        font-size: 1.7rem;
+        color: var(--black);
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 450px){
+
+    html{
+        font-size: 50%;
+    }
+
 }
